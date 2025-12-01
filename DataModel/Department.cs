@@ -6,15 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRUDOprs.DataModel
+namespace CRUDOperations.DataModel;
+
+[Table("Department")]
+public class Department
 {
-    [Table("Department")]
-    public class Department
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Did { get; set; }
-        public string? DName { get; set; }
-        public string? Description { get; set; }
-        public List<Employee>? Employees { get; set; }
-    }
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+    public int Did { get; set; }
+    public string? DName { get; set; }
+    public string? Description { get; set; }
+    public virtual IEnumerable<Employee>? Employees { get; set; } //iterator design pattern
 }

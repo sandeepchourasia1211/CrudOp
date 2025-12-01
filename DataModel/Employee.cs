@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRUDOprs.DataModel
+namespace CRUDOperations.DataModel
 {
     [Table("Employee")]
     public class Employee
@@ -23,7 +23,7 @@ namespace CRUDOprs.DataModel
 
         [ForeignKey("Department")]
         public int? Did { get; set; }
-        public Department? Department { get; set; }
+        public virtual Department? Department { get; set; }
 
         public int? ProjectId { get; set; }
         public int? ManagerId { get; set; }
