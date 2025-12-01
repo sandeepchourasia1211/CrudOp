@@ -13,6 +13,7 @@ public class Department
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
     public int Did { get; set; }
+    [Column(TypeName =("varchar(50)"))]
     public string? DName { get; set; }
     public string? Description { get; set; }
     public virtual IEnumerable<Employee>? Employees { get; set; } //iterator design pattern
